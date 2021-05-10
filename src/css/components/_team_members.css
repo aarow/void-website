@@ -1,0 +1,11 @@
+.team-member:hover .team-member--image {
+  filter: grayscale(0);
+}
+
+.team-member--image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+  filter: grayscale();
+  border-width: 0.5rem !important;
+}

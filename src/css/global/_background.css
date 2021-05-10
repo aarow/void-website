@@ -1,0 +1,8 @@
+.bg-black-opacity-less {
+  background-color: var(--bg-dark-opacity-less);
+}
+
+.bg-center-cover {
+  background-position: center;
+  background-size: cover;
+}
