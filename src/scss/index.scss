@@ -1,0 +1,23 @@
+@import "functions";
+@import "variables";
+@import "bootstrap_imports";
+@import "./global/index";
+@import "./components/index";
+
+.transition-400 {
+  transition: all 400ms;
+}
+
+.transition-250 {
+  transition: all 250ms;
+}
+
+.navbar-brand img {
+  height: 2rem;
+}
+
+.home-hero img {
+  width: 33vw;
+  height: auto;
+  /* visibility: visibility; */
+}

@@ -1,0 +1,38 @@
+:root {
+  --bg-dark-opacity-less: rgba(0, 0, 0, 0.8);
+}
+
+$enable-rounded: false;
+
+// scss-docs-start theme-colors-map
+// $theme-colors: (
+//   "primary": $primary,
+//   "secondary": $secondary,
+//   "success": $success,
+//   "info": $info,
+//   "warning": $warning,
+//   "danger": $danger,
+//   "light": $light,
+//   "dark": $dark,
+// ) !default;
+// scss-docs-end theme-colors-map
+
+$font-size-root: 16px;
+$font-size-base: 1rem;
+$font-family-sans-serif: "Mulish", sans-serif;
+$font-weight-normal: 300;
+$headings-font-family: "Hind", sans-serif;
+$headings-font-weight: 300;
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: pixToRem(50);
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$input-btn-border-width: 2px;
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 2rem;
+$input-btn-padding-y-lg: 0.5rem;
+$input-btn-padding-x-lg: 3rem;
+$input-btn-font-size-lg: $font-size-base;
