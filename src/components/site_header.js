@@ -43,7 +43,11 @@ export default function SiteHeader() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="#">Contact</Nav.Link>
+              <Nav.Link href="#">
+                <Button variant="outline-light" size="sm">
+                  Contact
+                </Button>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

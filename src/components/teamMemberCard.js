@@ -1,45 +1,56 @@
-import { useState } from "react";
-import { Card, Button, Modal } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Card } from "react-bootstrap";
 
-const TeamMemberCard = ({
-  name,
-  biography,
-  biographyExcerpt,
-  portrait: { url },
-  position,
-}) => {
+import TeamMemberDetails from "./teamMemberDetails";
+
+const TeamMemberCard = (props) => {
+  const {
+    name,
+    portrait: { url },
+    position,
+    biography,
+  } = props;
+
+  const [openDetails, setOpenDetails] = useState(false);
+  const [buttonClass, setButtonClass] = useState("border-light");
+  const buttonClassSupplemental =
+    "team-member--image bg-center-cover m-auto border transition-400";
+
+  // useEffect(() => {
+  //   if (openBiography && currentBiography === biography) {
+  //     setButtonClass("border-primary active");
+  //   } else {
+  //     setButtonClass("border-light");
+  //   }
+  // }, [openBiography, currentBiography]);
+
   const imageStyle = {
     backgroundImage: `url(${url})`,
   };
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const BiographyModal = () => (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>{name}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>{biography}</Modal.Body>
-    </Modal>
-  );
+  function toggleShowBiography() {
+    setOpenDetails(!openDetails);
+  }
 
   return (
     <>
-      <Card className="team-member h-100 border-0 bg-transparent">
+      <Card className={`team-member h-100 border-0 bg-transparent`}>
         <button
-          onClick={handleShow}
+          onClick={toggleShowBiography}
           style={imageStyle}
-          className="team-member--image bg-center-cover m-auto border border-light transition-400"
+          className={`${buttonClass} ${buttonClassSupplemental}`}
         />
         <Card.Body className="text-center">
           <Card.Title>{name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{position}</Card.Subtitle>
-          <Card.Text>{biographyExcerpt}</Card.Text>
         </Card.Body>
       </Card>
-      <BiographyModal />
+      {openDetails && (
+        <TeamMemberDetails
+          {...props}
+          toggleShowBiography={toggleShowBiography}
+        />
+      )}
     </>
   );
 };

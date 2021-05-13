@@ -1,7 +1,7 @@
 import BackgroundVideo from "react-background-video-player";
 
 const Hero = (props) => {
-  console.log(props);
+  // console.log(props);
   const { backgroundImage, content, height, cssClass, backgroundVideo } = props;
 
   const wrapperStyle = { backgroundImage: `url(${backgroundImage.url})` };

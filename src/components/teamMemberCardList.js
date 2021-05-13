@@ -1,7 +1,22 @@
-import { Container, Row, Col, CardDeck } from "react-bootstrap";
+import { useState } from "react";
+import { Container, Row, Col, Collapse } from "react-bootstrap";
 import TeamMemberCard from "./teamMemberCard";
 
 const TeamMemberCardList = (props) => {
+  const [currentBiography, setCurrentBiography] = useState("null");
+  const [openBiography, setOpenBiography] = useState(false);
+
+  function handleShowBiography(teamMember) {
+    if (!!teamMember.biography !== false) {
+      if (currentBiography == teamMember.biography.html) {
+        setOpenBiography(!openBiography);
+      } else {
+        setCurrentBiography(teamMember.biography.html);
+        setOpenBiography(true);
+      }
+    }
+  }
+
   return (
     <div className="">
       <Container className="py-5">
@@ -24,9 +39,22 @@ const TeamMemberCardList = (props) => {
                 className="mb-4"
               >
                 <TeamMemberCard {...teamMember} />
+                {/* <TeamMemberCard
+                  {...teamMember}
+                  handleShowBiography={() => handleShowBiography(teamMember)}
+                  currentBiography={currentBiography}
+                  openBiography={openBiography}
+                /> */}
               </Col>
             );
           })}
+        </Row>
+        <Row>
+          <Col md={{ span: 8, offset: 2 }}>
+            <Collapse in={openBiography} className="biography-block">
+              <div dangerouslySetInnerHTML={{ __html: currentBiography }}></div>
+            </Collapse>
+          </Col>
         </Row>
       </Container>
     </div>

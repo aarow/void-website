@@ -1,4 +1,5 @@
-.team-member:hover .team-member--image {
+.team-member:hover .team-member--image,
+.team-member--image.active {
   filter: grayscale(0);
 }
 

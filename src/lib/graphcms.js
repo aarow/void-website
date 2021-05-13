@@ -16,7 +16,9 @@ export async function getPage(slug) {
             ... on TeamMember {
               id
               name
-              biography
+              biography {
+                html
+              }
               biographyExcerpt
               portrait {
                 url(transformation: {image: {resize: {width: 512}}})
