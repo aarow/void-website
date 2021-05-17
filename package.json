@@ -15,6 +15,7 @@
     "next": "^10.2.0",
     "popper.js": "^1.16.1",
     "react": "^16.14.0",
+    "react-alice-carousel": "^2.5.1",
     "react-background-video-player": "^1.1.7",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^16.14.0",

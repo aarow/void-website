@@ -1,4 +1,5 @@
 import { GraphQLClient } from "graphql-request";
+import { Container, Row, Col } from "react-bootstrap";
 
 const graphcms = new GraphQLClient(
   "https://api-us-west-2.graphcms.com/v2/cknmqf56zvo9z01uteckkbkch/master"
@@ -11,7 +12,9 @@ export async function getStaticProps({ params }) {
         teamMember(where: { id: $slug } ) {
           id
           name
-          biography
+          biography {
+            html
+          }
           portrait {
             url
             alt
@@ -51,16 +54,25 @@ export async function getStaticPaths() {
   };
 }
 
-const TeamMember = ({ teamMember }) => (
-  <div>
-    <img
-      src={teamMember.portrait.url}
-      alt={teamMember.portrait.alt}
-      width="300"
-    />
-    <h1>{teamMember.name}</h1>
-    <div>{teamMember.biography}</div>
-  </div>
-);
-
-export default TeamMember;
+export default function TeamMember(props) {
+  const { teamMember } = props;
+  return (
+    <Container>
+      <Row>
+        <Col xs="2">
+          <img
+            src={teamMember.portrait.url}
+            alt={teamMember.portrait.alt}
+            style={{ width: "100%" }}
+          />
+        </Col>
+        <Col>
+          <h1>{teamMember.name}</h1>
+          <div
+            dangerouslySetInnerHTML={{ __html: teamMember.biography.html }}
+          />
+        </Col>
+      </Row>
+    </Container>
+  );
+}
