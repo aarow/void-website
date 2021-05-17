@@ -2,6 +2,14 @@
   --font-family-sans-serif: "Hind", sans-serif;
 }
 
+html {
+  font-size: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -10,6 +18,7 @@ h5,
 h6 {
   text-transform: uppercase;
   margin: 0.5em auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -28,9 +37,15 @@ h5 {
 
 p {
   margin: 1em 0;
+  color: $body-color;
 }
 
 .btn {
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
+
+.w-0 {
+  width: 0;
+}
+

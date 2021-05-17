@@ -1,24 +1,38 @@
-import { useState } from "react";
-import { Container, Row, Col, Collapse } from "react-bootstrap";
+import { useState, useRef } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import AliceCarousel from "react-alice-carousel";
+
 import TeamMemberCard from "./teamMemberCard";
+import TeamMemberDetails from "./teamMemberDetails";
 
 const TeamMemberCardList = (props) => {
-  const [currentBiography, setCurrentBiography] = useState("null");
-  const [openBiography, setOpenBiography] = useState(false);
+  const [currentTeamMember, setCurrentTeamMember] = useState(null);
+  const [openTeamMemberDetails, setOpenTeamMemberDetails] = useState(false);
+  const panelRef = useRef(null);
+
+  const cardList = props.items.map((teamMember) => {
+    return (
+      <button
+        type="button"
+        onClick={() => handleShowBiography(teamMember)}
+        className="border-0 bg-white px-3"
+      >
+        <TeamMemberCard {...teamMember} />
+      </button>
+    );
+  });
 
   function handleShowBiography(teamMember) {
-    if (!!teamMember.biography !== false) {
-      if (currentBiography == teamMember.biography.html) {
-        setOpenBiography(!openBiography);
-      } else {
-        setCurrentBiography(teamMember.biography.html);
-        setOpenBiography(true);
-      }
-    }
+    setCurrentTeamMember(teamMember);
+    setOpenTeamMemberDetails(true);
+  }
+
+  function handleClose() {
+    setOpenTeamMemberDetails(false);
   }
 
   return (
-    <div className="">
+    <div className="position-relative">
       <Container className="py-5">
         <Row className=" text-center">
           <Col>
@@ -26,36 +40,32 @@ const TeamMemberCardList = (props) => {
           </Col>
         </Row>
 
-        <Row as="ul" className="list-unstyled mt-5 justify-content-center">
-          {props.items.map((teamMember) => {
-            return (
-              <Col
-                key={teamMember.id}
-                as="li"
-                xs="12"
-                md="6"
-                lg="4"
-                xl="3"
-                className="mb-4"
-              >
-                <TeamMemberCard {...teamMember} />
-                {/* <TeamMemberCard
-                  {...teamMember}
-                  handleShowBiography={() => handleShowBiography(teamMember)}
-                  currentBiography={currentBiography}
-                  openBiography={openBiography}
-                /> */}
-              </Col>
-            );
-          })}
-        </Row>
-        <Row>
-          <Col md={{ span: 8, offset: 2 }}>
-            <Collapse in={openBiography} className="biography-block">
-              <div dangerouslySetInnerHTML={{ __html: currentBiography }}></div>
-            </Collapse>
-          </Col>
-        </Row>
+        <AliceCarousel
+          mouseTracking
+          items={cardList}
+          paddingLeft={100}
+          paddingRight={100}
+          responsive={{ 0: { items: 1 }, 768: { items: 3 } }}
+        />
+
+        <div
+          ref={panelRef}
+          className={`team-details--overlay py-5 px-6 border-left bg-light ${
+            openTeamMemberDetails ? "active" : ""
+          }`}
+        >
+          <div className="overflow-auto w-100 h-100">
+            {currentTeamMember && <TeamMemberDetails {...currentTeamMember} />}
+          </div>
+          <Button
+            variant="light"
+            aria-label="Close"
+            className="close p-3"
+            onClick={handleClose}
+          >
+            <span aria-hidden="true">&times;</span>
+          </Button>
+        </div>
       </Container>
     </div>
   );

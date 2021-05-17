@@ -42,19 +42,24 @@ export async function getPage(slug) {
             }
             ... on Cta {
               id
+              header
               title
+              header
+              subHeader
+              content
               centered
+              icon {
+                url
+              }
               linkUrl
               linkTitle
-              content {
-                html
-              }
               backgroundColor {
                 hex
               }
               textColor {
                 hex
               }
+              whiteText
             }
           }
         }

@@ -10,7 +10,6 @@ export async function getStaticProps() {
 }
 
 const Index = ({ page }) => {
-  // console.log(page.pageSections);
   return (
     <Layout>
       <Head>
@@ -27,7 +26,9 @@ const Index = ({ page }) => {
 };
 
 const PageSection = (props) => {
-  // console.log(props);
+  // if page section isn't available, skip
+  if (!props.items[0]) return <></>;
+
   const Component =
     props.items[0].__typename === "TeamMember"
       ? Blocks["TeamMemberCardList"]

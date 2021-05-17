@@ -2,8 +2,11 @@
   --bg-dark-opacity-less: rgba(0, 0, 0, 0.8);
 }
 
-$enable-rounded: false;
 
+$body-color: #595959;
+$headings-color: #303030;
+
+$enable-rounded: false;
 // scss-docs-start theme-colors-map
 // $theme-colors: (
 //   "primary": $primary,
@@ -33,7 +36,7 @@ $spacers: (
   10: $spacer * 8,
 ) !default;
 
-$font-size-root: 16px;
+$font-size-root: 14px !default;
 $font-size-base: 1rem;
 $font-family-sans-serif: "Mulish", sans-serif;
 $font-weight-normal: 300;
@@ -45,6 +48,11 @@ $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
+$line-height-base: 2.25;
+$line-height-sm:              1.25 !default;
+$line-height-lg:              2 !default;
+
+
 
 $input-btn-font-size: $font-size-base;
 $input-btn-border-width: 2px;

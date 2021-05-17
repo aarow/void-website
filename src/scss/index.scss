@@ -1,6 +1,7 @@
 @import "functions";
 @import "variables";
 @import "bootstrap_imports";
+@import "mixins";
 @import "./global/index";
 @import "./components/index";
 
@@ -20,7 +21,4 @@
   width: 33vw;
   height: auto;
   /* visibility: visibility; */
-}
-
-.cta-block.flex-column {
 }

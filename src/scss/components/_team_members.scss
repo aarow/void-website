@@ -10,3 +10,24 @@
   filter: grayscale(100%);
   border-width: 0.5rem !important;
 }
+
+.team-details--overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(100%);
+  @include transition400;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // padding: 1rem;
+  }
+}

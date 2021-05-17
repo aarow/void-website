@@ -17,7 +17,8 @@
     "react": "^16.14.0",
     "react-background-video-player": "^1.1.7",
     "react-bootstrap": "^1.5.2",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "sass": "^1.32.12"

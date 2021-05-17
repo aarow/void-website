@@ -11,7 +11,7 @@ export default function Layout({ children }) {
         <Meta />
       </Head>
 
-      <div className="min-vh-100">
+      <div className="min-vh-100 overflow-hidden">
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

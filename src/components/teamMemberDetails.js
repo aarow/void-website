@@ -1,22 +1,10 @@
-import { useState, useEffect } from "react";
-
 export default function TeamMemberDetails(props) {
-  const { name, portrait, position, biography, toggleShowBiography } = props;
-
-  const styles = {
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: "#fff",
-    zIndex: 10000,
-  };
-
+  const { name, portrait, position, biography } = props;
+  const portraitStyle = { backgroundImage: `url(${portrait.url})` };
   return (
     <>
-      <div style={styles} class="team-member--details position-fixed">
-        <div onClick={toggleShowBiography}>Close</div>
-        <div>{portrait.url}</div>
+      <div className="team-member--details p-3">
+        <div style={portraitStyle} className="p-5" />
         <div>{name}</div>
         <div>{position}</div>
         <div dangerouslySetInnerHTML={{ __html: biography.html }} />
