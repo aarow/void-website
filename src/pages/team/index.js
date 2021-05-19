@@ -2,6 +2,7 @@ import Head from "next/head";
 import { getPage } from "../../lib/graphcms";
 import { SITE_NAME } from "../../lib/constants";
 import Layout from "../../components/layout";
+import PageSection from "../../components/pageSection";
 
 export async function getStaticProps(foo) {
   console.log("foo: ", foo);
@@ -28,7 +29,9 @@ export default function TeamPage(props) {
       </section>
 
       {pageSections.map((pageSection) => (
-        <section key={pageSection.id}>{pageSection.id}</section>
+        <section key={pageSection.id} className="page-section">
+          <PageSection {...pageSection} />
+        </section>
       ))}
     </Layout>
   );
