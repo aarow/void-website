@@ -4,8 +4,7 @@ import { SITE_NAME } from "../../lib/constants";
 import Layout from "../../components/layout";
 import PageSection from "../../components/pageSection";
 
-export async function getStaticProps(foo) {
-  console.log("foo: ", foo);
+export async function getStaticProps() {
   return await getPage("team");
 }
 

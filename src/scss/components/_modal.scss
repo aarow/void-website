@@ -1,0 +1,20 @@
+
+.modal-content {
+    background-color: $modal-color;
+    border: none;
+    
+    *:not(button) {
+        color: #fff;
+    }
+
+    .form-control {
+        background-color: $body-color;
+        color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+
+        &::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+    }
+}

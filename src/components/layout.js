@@ -12,9 +12,9 @@ export default function Layout(props) {
         <Meta />
       </Head>
 
-      <div className="min-vh-100 overflow-hidden">
+      <div className="min-vh-100 overflow-hidden d-flex flex-column ">
         <SiteHeader isHome={isHome} />
-        <main>{children}</main>
+        <main className="site-main flex-grow-1">{children}</main>
         <SiteFooter />
       </div>
     </>
