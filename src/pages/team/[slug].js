@@ -55,21 +55,26 @@ export async function getStaticPaths() {
 }
 
 export default function TeamMember(props) {
-  const { teamMember } = props;
+  const {
+    teamMember,
+    teamMember: { portrait, biography },
+  } = props;
   return (
     <Container>
       <Row>
         <Col xs="2">
           <img
-            src={teamMember.portrait.url}
-            alt={teamMember.portrait.alt}
+            src={portrait ? portrait.url : ""}
+            alt={portrait ? portrait.alt : ""}
             style={{ width: "100%" }}
           />
         </Col>
         <Col>
           <h1>{teamMember.name}</h1>
           <div
-            dangerouslySetInnerHTML={{ __html: teamMember.biography.html }}
+            dangerouslySetInnerHTML={{
+              __html: biography ? biography.html : "",
+            }}
           />
         </Col>
       </Row>

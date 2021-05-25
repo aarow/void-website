@@ -1,17 +1,13 @@
 import { Card } from "react-bootstrap";
 
 const TeamMemberCard = (props) => {
-  const {
-    name,
-    portrait: { url },
-    position,
-  } = props;
+  const { name = "", portrait, position = "" } = props;
 
   const buttonClassSupplemental =
     "team-member--image bg-center-cover m-auto border transition-400";
 
   const imageStyle = {
-    backgroundImage: `url(${url})`,
+    backgroundImage: portrait ? `url(${portrait.url})` : "",
   };
 
   return (

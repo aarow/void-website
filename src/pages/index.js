@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import { getPage } from "../lib/graphcms";
 import * as Blocks from "../components";
+import PageSection from "../components/pageSection";
 import { SITE_NAME } from "../lib/constants";
 import Layout from "../components/layout";
 
@@ -9,9 +10,9 @@ export async function getStaticProps() {
   return await getPage("home");
 }
 
-const Index = ({ page }) => {
+export default function Index({ page }) {
   return (
-    <Layout>
+    <Layout isHome={true}>
       <Head>
         <title>{SITE_NAME}</title>
       </Head>
@@ -23,28 +24,4 @@ const Index = ({ page }) => {
       ))}
     </Layout>
   );
-};
-
-const PageSection = (props) => {
-  // if page section isn't available, skip
-  if (!props.items[0]) return <></>;
-
-  const Component =
-    props.items[0].__typename === "TeamMember"
-      ? Blocks["TeamMemberCardList"]
-      : Blocks[props.items[0].__typename];
-
-  return (
-    <>
-      {props.items[0].__typename !== "TeamMember" &&
-        props.items.map((item) => {
-          return <Component key={item.id} {...item} />;
-        })}
-      {props.items[0].__typename === "TeamMember" && (
-        <Component items={props.items} />
-      )}
-    </>
-  );
-};
-
-export default Index;
+}

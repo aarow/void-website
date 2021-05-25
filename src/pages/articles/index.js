@@ -1,18 +1,28 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
-import { getPage } from "../../lib/graphcms";
+import { getPage } from "../../lib/getPage";
+import { getArticles } from "../../lib/getArticles";
 import { SITE_NAME } from "../../lib/constants";
 import Layout from "../../components/layout";
+import ArticleList from "../../components/ArticleList";
 import PageSection from "../../components/pageSection";
 
 export async function getStaticProps() {
-  return await getPage("team");
+  return {
+    props: {
+      ...(await getPage("articles")),
+      ...(await getArticles()),
+    },
+  };
 }
 
-export default function TeamPage(props) {
+export default function ArticlePage(props) {
   const {
-    page: { title, subtitle, id, content, pageSections },
+    articles,
+    page: { title, subtitle, id, content, pageSections = [] },
   } = props;
+  // console.log(articles);
 
   return (
     <Layout>
@@ -26,7 +36,15 @@ export default function TeamPage(props) {
         <Container className="text-center">
           <h1>{title}</h1>
           <p>{subtitle}</p>
-          <div dangerouslySetInnerHTML={{ __html: content.html }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: content ? content.html : "" }}
+          />
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <ArticleList articles={articles} />
         </Container>
       </section>
 

@@ -1,3 +1,3 @@
 export default function SiteFooter() {
-  return <>Footer</>;
+  return <footer className="site-footer">Footer</footer>;
 }
