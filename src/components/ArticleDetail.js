@@ -1,5 +1,5 @@
 export default function ArticleDetail(props) {
-  const { name, portrait, position, biography } = props;
+  const { id, name, portrait, position, biography } = props;
   const bio = biography ? biography.html : "(bio coming soon)";
   const portraitUrl = portrait ? portrait.url : "";
   return (
