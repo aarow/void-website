@@ -9,6 +9,7 @@ $modal-color: rgb(43, 43, 43);
 $body-color: #595959;
 $headings-color: #303030;
 
+$modal-fade-transform: scale(.5);
 $enable-rounded: false;
 // scss-docs-start theme-colors-map
 // $theme-colors: (
@@ -45,7 +46,7 @@ $font-family-sans-serif: "Mulish", sans-serif;
 $font-weight-normal: 300;
 $headings-font-family: "Hind", sans-serif;
 $headings-font-weight: 300;
-$h1-font-size: $font-size-base * 2.5 !default;
+$h1-font-size: pixToRem(50);
 $h2-font-size: pixToRem(50);
 $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;

@@ -16,11 +16,10 @@ export default function SiteNavBar(props) {
           {routes.map((route) => (
             <NavButton key={route.slug} {...route} />
           ))}
-          <Link href="#contact" passHref>
-            <Nav.Link className="ml-md-3">
-              <ContactButton size="sm" />
-            </Nav.Link>
-          </Link>
+
+          <Nav.Link className="ml-md-3">
+            <ContactButton size="sm" />
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
