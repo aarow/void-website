@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-
 import ArticleItem from "./ArticleItem";
 
 export default function ArticleList({ articles = [] }) {

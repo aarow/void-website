@@ -1,24 +1,20 @@
-import { GraphQLClient } from "graphql-request";
-import { Container, Row, Col } from "react-bootstrap";
+import Head from "next/head";
 
-const graphcms = new GraphQLClient(
-  "https://api-us-west-2.graphcms.com/v2/cknmqf56zvo9z01uteckkbkch/master"
-);
+import { Container, Row, Col } from "react-bootstrap";
+import { GraphQLClient } from "graphql-request";
+import { API_URL, SITE_NAME } from "../../lib/constants";
+
+import Layout from "../../components/layout";
+
+const graphcms = new GraphQLClient(API_URL);
 
 export async function getStaticProps({ params }) {
-  const { teamMember } = await graphcms.request(
+  const { article } = await graphcms.request(
     `
-    query TeamMemberQuery($slug: ID!) {
-        teamMember(where: { id: $slug } ) {
+    query ArticleQuery($slug: ID!) {
+      article(where: { id: $slug } ) {
           id
-          name
-          biography {
-            html
-          }
-          portrait {
-            url
-            alt
-          }
+          title
         }
       }      
   `,
@@ -29,50 +25,58 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      teamMember,
+      article,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const { teamMembers } = await graphcms.request(`
+  const { articles } = await graphcms.request(`
     {
-      teamMembers {
+      articles {
         id
-        name
+        title
+        body {
+          html
+        }
       }
     }
   `);
 
-  console.log(teamMembers);
-
   return {
-    paths: teamMembers.map(({ id }) => ({
+    paths: articles.map(({ id }) => ({
       params: { slug: id },
     })),
     fallback: false,
   };
 }
 
-export default function TeamMember(props) {
-  const { teamMember } = props;
+export default function ArticleDetailPage(props) {
+  console.log(props);
+  const {
+    article: { title, body },
+  } = props;
+
   return (
-    <Container>
-      <Row>
-        <Col xs="2">
-          <img
-            src={teamMember.portrait.url}
-            alt={teamMember.portrait.alt}
-            style={{ width: "100%" }}
-          />
-        </Col>
-        <Col>
-          <h1>{teamMember.name}</h1>
-          <div
-            dangerouslySetInnerHTML={{ __html: teamMember.biography.html }}
-          />
-        </Col>
-      </Row>
-    </Container>
+    <Layout>
+      <Head>
+        <title>
+          {title} | {SITE_NAME}
+        </title>
+      </Head>
+
+      <section>
+        <article>
+          <Container className="text-center">
+            <h1>{title}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: body ? body.html : "(no content)",
+              }}
+            />
+          </Container>
+        </article>
+      </section>
+    </Layout>
   );
 }
