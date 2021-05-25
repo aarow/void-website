@@ -69,7 +69,9 @@ export default function TeamMember(props) {
         <Col>
           <h1>{teamMember.name}</h1>
           <div
-            dangerouslySetInnerHTML={{ __html: teamMember.biography.html }}
+            dangerouslySetInnerHTML={{
+              __html: teamMember.biography ? teamMember.biography.html : "",
+            }}
           />
         </Col>
       </Row>
