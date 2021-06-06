@@ -44,7 +44,7 @@ export default function ContactForm(props) {
           data-netlify="true"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <input type="hidden" name="contact" value="pizzaOrder" />
+          <input type="hidden" name="form-name" value="contact" />
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control

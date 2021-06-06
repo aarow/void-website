@@ -22,6 +22,7 @@ export default function Layout(props) {
       </div>
 
       <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="phone" name="phone" />
