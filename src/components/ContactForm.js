@@ -40,12 +40,6 @@ export default function ContactForm(props) {
       <h2 className="h3 text-center">Contact Me</h2>
       {!isSubmitting && !isSuccess && (
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="hidden"
-            name="form-name"
-            value="contact"
-            {...register("form-name", { value: "contact" })}
-          />
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
