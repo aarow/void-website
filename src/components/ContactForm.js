@@ -110,53 +110,6 @@ export default function ContactForm(props) {
           Thank you for contacting VOID. We will respond as quickly as possible.
         </div>
       )}
-      {/* <Formik
-        initialValues={initialValues}
-        onSubmit={async (values) => console.log(values)}
-      >
-        <Form name="contact" disabled={isSubmitting}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <Field type="text" name="name" className="form-control"></Field>
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <Field type="email" name="email" className="form-control"></Field>
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone">Phone</label>
-            <Field type="phone" name="phone" className="form-control"></Field>
-          </div>
-          <div className="form-group">
-            <label htmlFor="subject">Subject</label>
-            <Field as="select" name="subject" className="form-control">
-              <option value="Learn">Learn more</option>
-              <option value="Volunteer">Volunteer</option>
-              <option value="Updates">Receive updates</option>
-              <option value="Ideas">Ideas</option>
-              <option value="Other">Other (please fill in message)</option>
-            </Field>
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <Field
-              as="textarea"
-              name="message"
-              className="form-control"
-            ></Field>
-          </div>
-          <div className="form-group">
-            <Button variant="dark" type="submit" className="mr-3">
-              Submit
-            </Button>
-            <Button variant="outline-secondary" onClick={props.cancel}>
-              Cancel
-            </Button>
-          </div>
-
-          <input type="hidden" name="contact" value="contact" />
-        </Form>
-      </Formik> */}
     </>
   );
 }

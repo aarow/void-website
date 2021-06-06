@@ -19,16 +19,15 @@ export default function Layout(props) {
         <SiteHeader isHome={isHome} />
         <main className="site-main flex-grow-1">{children}</main>
         <SiteFooter />
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="phone" name="phone" />
+          <input type="subject" name="subject" />
+          <textarea name="message"></textarea>
+        </form>
       </div>
-
-      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="phone" name="phone" />
-        <input type="subject" name="subject" />
-        <textarea name="message"></textarea>
-      </form>
     </>
   );
 }
