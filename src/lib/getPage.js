@@ -56,6 +56,7 @@ const query = `query getPage($slug: String!) {
         }
         ... on Cta {
           id
+          ctaType
           header
           title
           header

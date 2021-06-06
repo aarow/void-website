@@ -9,9 +9,9 @@ export const routes = [
     label: "Team",
     slug: "team",
   },
-  {
-    path: "/articles",
-    label: "Articles/Media",
-    slug: "articles",
-  },
+  // {
+  //   path: "/articles",
+  //   label: "Articles/Media",
+  //   slug: "articles",
+  // },
 ];

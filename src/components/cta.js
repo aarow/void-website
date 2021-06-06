@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import ContactButton from "./ContactButton";
 
 const Cta = (props) => {
   const {
@@ -14,6 +15,7 @@ const Cta = (props) => {
     cssClasses = "",
     icon = null,
     whiteText,
+    ctaType,
   } = props;
 
   const wrapperId = `cta-${id}`;
@@ -38,11 +40,14 @@ const Cta = (props) => {
             <Col xs={12} md={8}>
               {!icon && centered && <span className={blockDecorationClass} />}
               {icon && centered && <img src={icon.url} className={iconClass} />}
-              <h5 style={textColorStyle}>{subHeader}</h5>
+              <p style={textColorStyle} className="h5">
+                {subHeader}
+              </p>
               <h2 style={textColorStyle}>{header}</h2>
               <p style={textColorStyle}>{content}</p>
             </Col>
-            {linkUrl && linkTitle && (
+            {ctaType === "Contact" && <ContactButton size="lg" />}
+            {ctaType !== "Contact" && linkUrl && linkTitle && (
               <Col xs={12} md="auto" className="my-4">
                 <a href={linkUrl} className={`btn btn-lg ${linkClass}`}>
                   {linkTitle}

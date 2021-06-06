@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 import { getPage } from "../lib/graphcms";
-import * as Blocks from "../components";
 import PageSection from "../components/pageSection";
 import { SITE_NAME } from "../lib/constants";
 import Layout from "../components/layout";

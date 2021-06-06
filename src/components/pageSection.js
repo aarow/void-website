@@ -1,4 +1,4 @@
-import * as Blocks from "../components";
+import * as Blocks from "./pageSectionTypes";
 
 export default function PageSection(props) {
   // if page section isn't available, skip

@@ -30,7 +30,7 @@ export default function Hero(props) {
         style={{ background: "rgba(0,0,0,0.8)" }}
       >
         <div
-          className="hero__body position-relative"
+          className="hero__body position-relative text-white"
           dangerouslySetInnerHTML={{ __html: content.html }}
         ></div>
       </div>

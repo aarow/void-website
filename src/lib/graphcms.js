@@ -30,6 +30,17 @@ const query = `query getPage($slug: String!) {
       id
       items {
         __typename
+        ... on Article {
+          id
+          title
+          body {
+            html
+          }
+          mainImage {
+            url
+            alt
+          }
+        }
         ... on TeamMember {
           id
           name
@@ -59,6 +70,7 @@ const query = `query getPage($slug: String!) {
         }
         ... on Cta {
           id
+          ctaType
           header
           title
           header

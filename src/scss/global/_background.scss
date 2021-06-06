@@ -1,5 +1,6 @@
 .bg-black-opacity-less {
   background-color: var(--bg-dark-opacity-less);
+  backdrop-filter: blur(5px);
 }
 
 .bg-center-cover {

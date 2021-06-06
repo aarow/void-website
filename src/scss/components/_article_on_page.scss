@@ -1,0 +1,20 @@
+.article-on-page {
+  position: relative;
+
+  [class*="floating-image"] {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      position: absolute;
+      top: 20%;
+      right: 1rem;
+      width: 20vw;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
