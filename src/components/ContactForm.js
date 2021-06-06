@@ -41,7 +41,7 @@ export default function ContactForm(props) {
       {!isSubmitting && !isSuccess && (
         <Form
           name="contact"
-          netlify
+          netlify="true"
           data-netlify="true"
           onSubmit={handleSubmit(onSubmit)}
         >
