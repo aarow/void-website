@@ -11,13 +11,13 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          <form name="contact" netlify hidden>
+          {/* <form name="contact" netlify netlify-honeypot="bot-field" hidden>
             <input type="text" name="name" />
             <input type="email" name="email" />
             <input type="phone" name="phone" />
             <select type="subject" name="subject" />
             <textarea name="message"></textarea>
-          </form>
+          </form> */}
           <Main />
           <NextScript />
         </body>

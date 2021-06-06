@@ -39,7 +39,12 @@ export default function ContactForm(props) {
     <>
       <h2 className="h3 text-center">Contact Me</h2>
       {!isSubmitting && !isSuccess && (
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form
+          onSubmit={handleSubmit(onSubmit)}
+          data-netlify="true"
+          name="contact"
+          id="contact"
+        >
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
