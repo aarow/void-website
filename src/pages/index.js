@@ -13,7 +13,7 @@ export default function Index({ page }) {
   return (
     <Layout isHome={true}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{SITE_NAME}: Victims Of Illicit Drugs</title>
       </Head>
 
       {page.pageSections.map((pageSection) => (

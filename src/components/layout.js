@@ -23,3 +23,15 @@ export default function Layout(props) {
     </>
   );
 }
+
+export function NetlifyForm() {
+  return (
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="phone" name="phone" />
+      <select type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+  );
+}

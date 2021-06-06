@@ -4,7 +4,7 @@ export default function ContactForm(props) {
   return (
     <>
       <h2 className="h3 text-center">Contact Me</h2>
-      <Form data-netlify="true">
+      <Form name="contact" data-netlify="true">
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Your name" />
@@ -46,6 +46,8 @@ export default function ContactForm(props) {
         <Button variant="outline-secondary" onClick={props.cancel}>
           Cancel
         </Button>
+
+        <input type="hidden" name="form-name" value="contact" />
       </Form>
     </>
   );
