@@ -11,9 +11,6 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          <Main />
-          <NextScript />
-
           <form name="contact" netlify netlify-honeypot="bot-field" hidden>
             <input type="hidden" name="form-name" value="contact" />
             <input type="text" name="name" />
@@ -22,6 +19,8 @@ class MyDocument extends Document {
             <input type="subject" name="subject" />
             <textarea name="message"></textarea>
           </form>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
