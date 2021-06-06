@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+          <form name="contact" netlify hidden>
             <input type="text" name="name" />
             <input type="email" name="email" />
             <input type="phone" name="phone" />
