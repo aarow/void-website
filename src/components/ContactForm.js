@@ -47,7 +47,7 @@ export default function ContactForm(props) {
           Cancel
         </Button>
 
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="contact" value="contact" />
       </Form>
     </>
   );
