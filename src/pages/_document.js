@@ -15,7 +15,7 @@ class MyDocument extends Document {
             <input type="text" name="name" />
             <input type="email" name="email" />
             <input type="phone" name="phone" />
-            <input type="subject" name="subject" />
+            <select type="subject" name="subject" />
             <textarea name="message"></textarea>
           </form>
           <Main />
