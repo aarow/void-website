@@ -20,62 +20,62 @@ export default function ContactForm(props) {
 
   const onSubmit = (data) => {
     setIsSubmitting(true);
-    // return fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({ "form-name": "contact", ...data }),
-    // })
-    //   .then(() => {
-    //     setIsSubmitting(false);
-    //     setIsSuccess(true);
-    //   })
-    //   .catch((error) => {
-    //     console.log("form submission error: \n", { error });
-    //     setIsSubmitting(false);
-    //   });
-
-    const { name, email, message, phone, subject } = data;
-
-    const endpoint =
-      "https://jjvn35hztg.execute-api.us-east-2.amazonaws.com/default/sendEmail";
-
-    const body = JSON.stringify({
-      toAddresses: ["amy@anfhelp.org"],
-      senderName: name,
-      senderEmail: email,
-      message: `
-        Name: ${name}\n
-        Email: ${email}\n
-        Phone: ${phone}\n\n
-        Subject: ${subject}\n\n
-        Message: ${message}
-      `,
-    });
-
-    const requestOptions = {
+    return fetch("/", {
       method: "POST",
-      body,
-    };
-
-    fetch(endpoint, requestOptions)
-      .then((response) => {
-        if (!response.ok) throw new Error("Error in fetch");
-        return response.json();
-      })
-      .then((response) => {
-        console.log(response);
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...data }),
+    })
+      .then(() => {
         setIsSubmitting(false);
         setIsSuccess(true);
-        // document.getElementById("result-text").innerText =
-        //   "Email sent successfully!";
       })
       .catch((error) => {
-        console.log(error);
+        console.log("form submission error: \n", { error });
         setIsSubmitting(false);
-
-        // document.getElementById("result-text").innerText =
-        //   "An unkown error occured.";
       });
+
+    // const { name, email, message, phone, subject } = data;
+
+    // const endpoint =
+    //   "https://jjvn35hztg.execute-api.us-east-2.amazonaws.com/default/sendEmail";
+
+    // const body = JSON.stringify({
+    //   toAddresses: ["amy@anfhelp.org"],
+    //   senderName: name,
+    //   senderEmail: email,
+    //   message: `
+    //     Name: ${name}\n
+    //     Email: ${email}\n
+    //     Phone: ${phone}\n\n
+    //     Subject: ${subject}\n\n
+    //     Message: ${message}
+    //   `,
+    // });
+
+    // const requestOptions = {
+    //   method: "POST",
+    //   body,
+    // };
+
+    // fetch(endpoint, requestOptions)
+    //   .then((response) => {
+    //     if (!response.ok) throw new Error("Error in fetch");
+    //     return response.json();
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //     setIsSubmitting(false);
+    //     setIsSuccess(true);
+    //     // document.getElementById("result-text").innerText =
+    //     //   "Email sent successfully!";
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     setIsSubmitting(false);
+
+    //     // document.getElementById("result-text").innerText =
+    //     //   "An unkown error occured.";
+    //   });
   };
 
   return (
