@@ -20,7 +20,6 @@ export default function ContactForm(props) {
 
   const onSubmit = (data) => {
     setIsSubmitting(true);
-    // register("form-name", { value: "contact" });
     // return fetch("/", {
     //   method: "POST",
     //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -89,6 +88,14 @@ export default function ContactForm(props) {
           name="contact"
           id="contact"
         >
+          <input
+            type="text"
+            name="form-name"
+            value="contact"
+            hidden
+            {...register("form-name", { value: "contact" })}
+          />
+
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
