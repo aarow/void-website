@@ -31,3 +31,8 @@ yarn dev
 ### Run on Codesandbox
 
 [![Develop with Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/GraphCMS/graphcms-examples/tree/master/with-nextjs)
+
+
+## Setting email api with AWS
+
+https://www.freecodecamp.org/news/how-to-receive-emails-via-your-sites-contact-us-form-with-aws-ses-lambda-api-gateway/

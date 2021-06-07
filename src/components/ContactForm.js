@@ -20,7 +20,7 @@ export default function ContactForm(props) {
 
   const onSubmit = (data) => {
     setIsSubmitting(true);
-
+    // register("form-name", { value: "contact" });
     // return fetch("/", {
     //   method: "POST",
     //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -34,8 +34,6 @@ export default function ContactForm(props) {
     //     console.log("form submission error: \n", { error });
     //     setIsSubmitting(false);
     //   });
-
-    console.log(data);
 
     const { name, email, message, phone, subject } = data;
 
