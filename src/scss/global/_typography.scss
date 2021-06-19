@@ -1,0 +1,13 @@
+$sizes: (
+  "1": 1,
+  "1-4": 1.4,
+  "1-6": 1.6,
+  "2": 2,
+  "2-4": 2.4,
+);
+
+@each $name, $size in $sizes {
+  .line-height-#{$name} {
+    line-height: $size;
+  }
+}

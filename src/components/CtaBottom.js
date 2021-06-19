@@ -1,11 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import CtaBottom from "./CtaBottom";
 import ContactButton from "./ContactButton";
+import NewsletterButton from "./NewsletterButton";
 
-const Cta = (props) => {
-  const { ctaType } = props;
-  if (ctaType === "Bottom") return <CtaBottom {...props} />;
-
+export default function CtaBottom(props) {
   const {
     id,
     header,
@@ -19,18 +16,19 @@ const Cta = (props) => {
     cssClasses = "",
     icon = null,
     whiteText,
+    ctaType,
   } = props;
 
   const wrapperId = `cta-${id}`;
-  const wrapperClass = `cta--wrapper py-10 ${cssClasses}`;
+  const wrapperClass = `cta--wrapper py-4 position-absolute ${cssClasses}`;
   const rowClass = centered
     ? "cta-block flex-column align-items-center justify-content-center text-center"
     : "cta-block align-items-center justify-content-between";
-  const blockDecorationClass =
-    "block--decoration d-inline-block border-left border-secondary pt-5";
-  const iconClass = "block--icon mb-3";
   const wrapperStyle = {
     backgroundColor: backgroundColor ? backgroundColor.hex : "inherit",
+    bottom: "2rem",
+    left: "2rem",
+    width: "calc(100% - 4rem)",
   };
   const textColorStyle = { color: whiteText ? "#fff" : "inherit" };
   const linkClass = whiteText ? "btn-outline-light" : "btn-outline-dark";
@@ -41,27 +39,31 @@ const Cta = (props) => {
         <Container>
           <Row className={rowClass}>
             <Col xs={12} md={8}>
-              {!icon && centered && <span className={blockDecorationClass} />}
-              {icon && centered && <img src={icon.url} className={iconClass} />}
               <p style={textColorStyle} className="h5">
                 {subHeader}
               </p>
-              <h2 style={textColorStyle}>{header}</h2>
-              <p style={textColorStyle}>{content}</p>
+              <h2 className="h3" style={textColorStyle}>
+                {header}
+              </h2>
+              <p className="line-height-1-4" style={textColorStyle}>
+                {content}
+              </p>
             </Col>
-            {ctaType === "Contact" && <ContactButton size="lg" />}
-            {ctaType !== "Contact" && linkUrl && linkTitle && (
+
+            <Col xs={12} md="auto" className="my-4">
+              <NewsletterButton title={linkTitle} />
+            </Col>
+
+            {/* {ctaType !== "Contact" && linkUrl && linkTitle && (
               <Col xs={12} md="auto" className="my-4">
                 <a href={linkUrl} className={`btn btn-lg ${linkClass}`}>
                   {linkTitle}
                 </a>
               </Col>
-            )}
+            )} */}
           </Row>
         </Container>
       </div>
     </>
   );
-};
-
-export default Cta;
+}
