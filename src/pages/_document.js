@@ -23,6 +23,15 @@ class MyDocument extends Document {
             <select name="subject" />
             <textarea name="message"></textarea>
           </form>
+          <form
+            name="newsletter"
+            netlify="true"
+            netlify-honeypot="bot-field"
+            hidden
+          >
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+          </form>
           <Main />
           <NextScript />
         </body>
