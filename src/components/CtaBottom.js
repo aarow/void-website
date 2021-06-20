@@ -20,7 +20,7 @@ export default function CtaBottom(props) {
   } = props;
 
   const wrapperId = `cta-${id}`;
-  const wrapperClass = `cta--wrapper py-4 position-absolute ${cssClasses}`;
+  const wrapperClass = `cta--wrapper py-3 position-absolute ${cssClasses}`;
   const rowClass = centered
     ? "cta-block flex-column align-items-center justify-content-center text-center"
     : "cta-block align-items-center justify-content-between";
@@ -38,7 +38,7 @@ export default function CtaBottom(props) {
       <div id={wrapperId} className={wrapperClass} style={wrapperStyle}>
         <Container>
           <Row className={rowClass}>
-            <Col xs={12} md={8}>
+            <Col sm={7}>
               <p style={textColorStyle} className="h5">
                 {subHeader}
               </p>
@@ -50,7 +50,7 @@ export default function CtaBottom(props) {
               </p>
             </Col>
 
-            <Col xs={12} md="auto" className="my-4">
+            <Col sm={5} className="text-md-right">
               <NewsletterButton title={linkTitle} />
             </Col>
 

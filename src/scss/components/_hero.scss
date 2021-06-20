@@ -1,3 +1,12 @@
+.hero__body {
+  margin-top: -10rem;
+  padding: 2rem 2rem;
+
+  @include media-breakpoint-up(sm) {
+    margin: auto;
+  }
+}
+
 .hero__body * {
-    color: white;
+  color: white;
 }
