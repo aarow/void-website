@@ -6,7 +6,7 @@ export default function SiteFooter() {
       <Container>
         <Row>
           <Col className="text-center">
-            VOID is a non-profit 501(3)(c) organization located in California
+            VOID is a non-profit organization located in California
           </Col>
         </Row>
       </Container>
