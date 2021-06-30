@@ -63,7 +63,7 @@ export default function ContactForm(props) {
           />
 
           <Form.Group controlId="name">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>Name (required)</Form.Label>
             <Form.Control
               type="text"
               placeholder="Your name"
@@ -72,7 +72,7 @@ export default function ContactForm(props) {
           </Form.Group>
 
           <Form.Group controlId="email">
-            <Form.Label>Email</Form.Label>
+            <Form.Label>Email (required)</Form.Label>
             <Form.Control
               type="email"
               placeholder="Your email address"
