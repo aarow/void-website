@@ -10,7 +10,7 @@ export default function Article(props) {
             <div className="text-center">
               <span className="block--decoration d-inline-block border-left border-secondary pt-5"></span>
             </div>
-            <h2 className="text-center">{title}</h2>
+            <h2 className="h1 text-center">{title}</h2>
             <div dangerouslySetInnerHTML={{ __html: body.html }} />
           </Col>
         </Row>

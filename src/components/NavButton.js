@@ -8,7 +8,7 @@ export default function NavButton(props) {
 
   return (
     <Link href={props.path} passHref>
-      <Nav.Link className={`px-md-4 ${activeClass}`}>
+      <Nav.Link className={`px-md-2 ${activeClass} ${props.className}`}>
         <span>{props.label}</span>
       </Nav.Link>
     </Link>

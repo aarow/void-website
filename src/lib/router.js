@@ -1,17 +1,17 @@
 export const routes = [
   {
-    path: "/",
-    label: "Home",
-    slug: "home",
+    path: "/media",
+    label: "Media",
+    slug: "media",
+  },
+  {
+    path: "/articles",
+    label: "Articles",
+    slug: "articles",
   },
   {
     path: "/team",
     label: "Team",
     slug: "team",
   },
-  // {
-  //   path: "/articles",
-  //   label: "Articles/Media",
-  //   slug: "articles",
-  // },
 ];

@@ -46,7 +46,9 @@ const Cta = (props) => {
               <p style={textColorStyle} className="h5">
                 {subHeader}
               </p>
-              <h2 style={textColorStyle}>{header}</h2>
+              <h2 className="h1" style={textColorStyle}>
+                {header}
+              </h2>
               <p style={textColorStyle}>{content}</p>
             </Col>
             {ctaType === "Contact" && <ContactButton size="lg" />}

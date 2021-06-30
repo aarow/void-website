@@ -12,6 +12,7 @@ export async function getStaticProps() {
   return {
     props: {
       ...(await getPage("articles")),
+      // ...(await getArticles({ orderBy: "publishDate", orderByMethod: "DESC" })),
       ...(await getArticles()),
     },
   };
@@ -25,7 +26,7 @@ export default function ArticlePage(props) {
   // console.log(articles);
 
   return (
-    <Layout>
+    <Layout topPadding>
       <Head>
         <title>
           {title} | {SITE_NAME}

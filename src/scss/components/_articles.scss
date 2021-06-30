@@ -1,6 +1,34 @@
 .article-item--image {
-    width: 20vw;
-    height: 20vw;
-    max-width: 180px;
-    max-height: 180px;
+  width: 20vw;
+  height: 20vw;
+  max-width: 180px;
+  max-height: 180px;
+}
+
+.article--main-image {
+  overflow: hidden;
+  width: 100%;
+  height: 50vh;
+  max-height: 344px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.article--main {
+  &:before {
+    content: "";
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9rem;
+    box-shadow: 0 0 1rem rgba(black, 0.35);
+  }
 }

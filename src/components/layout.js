@@ -7,8 +7,10 @@ import SiteFooter from "./site_footer";
 const BODY_CLASS = "min-vh-100 overflow-hidden d-flex flex-column";
 
 export default function Layout(props) {
-  const { children, isHome = false } = props;
-  const bodyClass = isHome ? BODY_CLASS : `pt-7 ${BODY_CLASS}`;
+  // console.log(props);
+  const { children, isHome = false, topPadding, className } = props;
+  let bodyClass = `${BODY_CLASS} ${className}`;
+  bodyClass = !isHome && topPadding ? `pt-10 ${bodyClass}` : bodyClass;
   return (
     <>
       <Head>

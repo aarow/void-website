@@ -15,7 +15,7 @@ export default function TeamPage(props) {
   } = props;
 
   return (
-    <Layout>
+    <Layout topPadding>
       <Head>
         <title>
           {title} | {SITE_NAME}

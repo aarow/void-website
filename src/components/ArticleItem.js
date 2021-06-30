@@ -1,27 +1,60 @@
-import { Card } from "react-bootstrap";
+import { format } from "date-fns";
 import Link from "next/link";
 
 export default function ArticleItem(props) {
-  const { id, title = "", body, mainImage, publishDate, createdAt } = props;
-  const publishedTime = publishDate ? publishDate : createdAt;
+  // console.log(props);
+
+  const {
+    title = "",
+    excerpt,
+    mainImage,
+    publishDate,
+    createdAt,
+    slug,
+    externalArticle,
+    author,
+  } = props;
+  const publishedTime = format(
+    new Date(publishDate ? publishDate : createdAt),
+    "d MMM yyyy"
+  );
+  const url = externalArticle ? externalArticle : `/articles/${slug}`;
+  let byline = format(new Date(publishedTime), "d MMM yyyy");
+  byline += author && author.name ? ` | ${author.name}` : "";
+
+  const Anchor = ({ children }) => (
+    <>
+      {externalArticle && (
+        <a href={url} target="_blank">
+          {children}
+        </a>
+      )}
+      {!externalArticle && (
+        <Link href={url}>
+          <a>{children}</a>
+        </Link>
+      )}
+    </>
+  );
 
   return (
     <article className="article-item d-flex">
-      <div className="article-item--image transition-400  mr-4">
-        <Link href={`/articles/${id}`}>
-          <a>
-            <img
-              src={mainImage ? mainImage.url : ""}
-              alt={title}
-              className="image-fit"
-            />
-          </a>
-        </Link>
+      <div className="article-item--image transition-400  mr-4 flex-shrink-0">
+        <Anchor>
+          <img
+            src={mainImage ? mainImage.url : ""}
+            alt={title}
+            className="image-fit"
+          />
+        </Anchor>
       </div>
       <div>
-        <h3>{title}</h3>
-        <p className="small text-muted">{publishedTime}</p>
-        <p className="text-muted">{body.text}</p>
+        <Anchor>
+          <h3 className="m-0 ">{title}</h3>
+        </Anchor>
+
+        <p className="small text-muted m-0">{byline}</p>
+        <p className="text-muted m-0 mt-2 line-height-1-6">{excerpt}</p>
       </div>
     </article>
   );

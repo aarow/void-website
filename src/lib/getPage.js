@@ -23,6 +23,7 @@ const query = `query getPage($slug: String!) {
     content {
       html
     }
+    markdownContent
     pageSections {
       id
       items {

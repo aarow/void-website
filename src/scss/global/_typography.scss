@@ -1,7 +1,5 @@
 h1,
-.h1,
-h2,
-.h2 {
+.h1 {
   font-size: pixToRem(24);
 
   @include media-breakpoint-up(sm) {
@@ -9,7 +7,28 @@ h2,
   }
 
   @include media-breakpoint-up(md) {
+    font-size: pixToRem(42);
+  }
+
+  @include media-breakpoint-up(lg) {
     font-size: pixToRem(50);
+  }
+}
+
+h2,
+.h2 {
+  font-size: pixToRem(16);
+
+  @include media-breakpoint-up(sm) {
+    font-size: pixToRem(18);
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: pixToRem(24);
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: pixToRem(36);
   }
 }
 

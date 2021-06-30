@@ -1,15 +1,13 @@
 $modal-color: rgb(43, 43, 43);
 
-
 :root {
   --bg-dark-opacity-less: rgba(0, 0, 0, 0.8);
 }
 
-
 $body-color: #595959;
 $headings-color: #303030;
 
-$modal-fade-transform: scale(.5);
+$modal-fade-transform: scale(0.5);
 $enable-rounded: false;
 // scss-docs-start theme-colors-map
 // $theme-colors: (
@@ -47,16 +45,14 @@ $font-weight-normal: 300;
 $headings-font-family: "Hind", sans-serif;
 $headings-font-weight: 300;
 $h1-font-size: pixToRem(50);
-$h2-font-size: pixToRem(50);
+$h2-font-size: pixToRem(40);
 $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 $line-height-base: 2.25;
-$line-height-sm:              1.25 !default;
-$line-height-lg:              2 !default;
-
-
+$line-height-sm: 1.25 !default;
+$line-height-lg: 2 !default;
 
 $btn-font-size: $font-size-base;
 $btn-border-width: 2px;
