@@ -14,7 +14,7 @@
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
     "jquery": "^3.6.0",
-    "next": "^10.2.0",
+    "next": "^11.0.1",
     "popper.js": "^1.16.1",
     "react": "^16.14.0",
     "react-alice-carousel": "^2.5.1",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "browserslist": "^4.16.6",
-    "glob-parent": "^6.0.0",
+    "glob-parent": "^5.1.2",
     "react-markdown": "^6.0.2",
     "rehype-raw": "^5.1.0",
     "sass": "^1.32.12",
