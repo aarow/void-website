@@ -28,6 +28,7 @@
     "browserslist": "^4.16.6",
     "glob-parent": "^6.0.0",
     "react-markdown": "^6.0.2",
+    "rehype-raw": "^5.1.0",
     "sass": "^1.32.12"
   }
 }

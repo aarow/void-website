@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 const ReactMarkdown = require("react-markdown");
+import rehypeRaw from 'rehype-raw'
+
 import { Container } from "react-bootstrap";
 import { getPage } from "../lib/getPage";
 import { SITE_NAME } from "../lib/constants";
@@ -40,7 +42,7 @@ export default function MediaPage(props) {
             dangerouslySetInnerHTML={{ __html: content ? content.html : "" }}
           />
           <section>
-            <ReactMarkdown>{markdownContent}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdownContent}</ReactMarkdown>
           </section>
         </Container>
       </article>
