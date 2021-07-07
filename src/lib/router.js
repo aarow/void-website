@@ -14,4 +14,8 @@ export const routes = [
     label: "Team",
     slug: "team",
   },
+  {
+    path: "https://stopthevoid.deco-charity.com/",
+    label: "Shop",
+    slug: "shop"
 ];
