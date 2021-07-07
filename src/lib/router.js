@@ -18,4 +18,5 @@ export const routes = [
     path: "https://stopthevoid.deco-charity.com/",
     label: "Shop",
     slug: "shop"
+  }
 ];
