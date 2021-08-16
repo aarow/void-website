@@ -3,6 +3,7 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 import NavButton from "./NavButton";
 import { routes } from "../lib/router";
 import ContactButton from "./ContactButton";
+import DonateButton from "./DonateButton";
 
 export default function SiteNavBar(props) {
   return (
@@ -16,7 +17,8 @@ export default function SiteNavBar(props) {
           {routes.map((route) => (
             <NavButton key={route.slug} {...route} className="mx-3" />
           ))}
-          <ContactButton size="sm" className="nav-link ml-md-3" />
+          <ContactButton size="sm" className="ml-md-3" />
+          <DonateButton size="sm" className="ml-md-3" />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
