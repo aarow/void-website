@@ -38,15 +38,9 @@ export default function ContactForm(props) {
 
   return (
     <>
-      <div  className="text-center">
-        <h2 className="mb-0">Contact VOID</h2>
-        <p className="mt-1">Call us 1-800-799-7951</p>
-        <h3>Send a message</h3>
-      </div>
-      
-      {!isSubmitting && !isSuccess && hasError && 
+      {!isSubmitting && !isSuccess && hasError && (
         <p className="text-error">Error during submission. Please try again</p>
-      }
+      )}
       {!isSubmitting && !isSuccess && (
         <Form
           onSubmit={handleSubmit(onSubmit)}

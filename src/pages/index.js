@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { getPage } from "../lib/graphcms";
+import { getPage, getPageRoutes } from "../lib/graphcms";
 import PageSection from "../components/pageSection";
 import { SITE_NAME } from "../lib/constants";
 import Layout from "../components/layout";
@@ -11,7 +11,7 @@ export async function getStaticProps() {
 
 export default function Index({ page }) {
   return (
-    <Layout isHome={true}>
+    <Layout isHome={true} topPadding={false}>
       <Head>
         <title>{SITE_NAME}: Victims Of Illicit Drugs</title>
       </Head>
