@@ -29,6 +29,7 @@ export async function getStaticProps({ params }) {
         }
         createdAt
         publishDate
+        publishTime
         body {
           html
         }
@@ -75,8 +76,7 @@ export async function getStaticPaths() {
 }
 
 export default function ArticleDetailPage(props) {
-  console.log(props);
-
+  // console.log(props);
   const {
     article: {
       id,
@@ -84,14 +84,15 @@ export default function ArticleDetailPage(props) {
       excerpt,
       body,
       mainImage,
-      publishDate,
+      publishTime,
       createdAt,
       author,
       externalArticle,
     },
   } = props;
+
   const publishedTime = format(
-    new Date(publishDate ? publishDate : createdAt),
+    new Date(publishTime ? publishTime : createdAt),
     "d MMM yyyy"
   );
 
