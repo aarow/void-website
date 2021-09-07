@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { format } from "date-fns";
 import { Container, Row, Col } from "react-bootstrap";
 import { GraphQLClient } from "graphql-request";
@@ -21,6 +22,11 @@ export async function getStaticProps({ params }) {
               image: { resize: { width: 1920, fit: clip } }
             }
           )
+        }
+        ogImage:mainImage {
+          url(transformation: {image: {resize: {width: 1200}}})
+          id
+          handle
         }
         slug
         externalArticle
@@ -88,6 +94,7 @@ export default function ArticleDetailPage(props) {
       createdAt,
       author,
       externalArticle,
+      ogImage,
     },
   } = props;
 
@@ -102,6 +109,11 @@ export default function ArticleDetailPage(props) {
         <title>
           {title} | {SITE_NAME}
         </title>
+        <meta property="og:title" content={`${title} | {SITE_NAME}`} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:image" content={ogImage.url} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
       </Head>
 
       <section>

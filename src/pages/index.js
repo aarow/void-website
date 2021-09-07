@@ -14,6 +14,10 @@ export default function Index({ page }) {
     <Layout isHome={true} topPadding={false}>
       <Head>
         <title>{SITE_NAME}: Victims Of Illicit Drugs</title>
+        <meta
+          property="og:title"
+          content={`${SITE_NAME}: Victims Of Illicit Drugs`}
+        />
       </Head>
 
       {page.pageSections.map((pageSection) => (
