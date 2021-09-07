@@ -96,7 +96,7 @@ export default function ArticleDetailPage(props) {
   );
 
   return (
-    <Layout>
+    <Layout topPadding={false}>
       <Head>
         <title>
           {title} | {SITE_NAME}
