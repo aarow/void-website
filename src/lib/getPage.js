@@ -45,6 +45,7 @@ const query = `query getPage($slug: String!) {
           content {
             html
           }
+          plainTextContent 
           height
           title
           backgroundImage {

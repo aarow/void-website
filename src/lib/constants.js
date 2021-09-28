@@ -50,6 +50,7 @@ export const GET_PAGE_QUERY = `query getPage($slug: String!) {
             content {
               html
             }
+            plainTextContent
             height
             title
             backgroundImage {
