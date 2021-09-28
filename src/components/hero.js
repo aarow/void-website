@@ -2,7 +2,16 @@ import BackgroundVideo from "react-background-video-player";
 
 export default function Hero(props) {
   // console.log(props);
-  const { backgroundImage, content, height, cssClass, backgroundVideo } = props;
+  const {
+    backgroundImage,
+    content,
+    height,
+    cssClass,
+    backgroundVideo,
+    plainTextContent,
+  } = props;
+
+  console.log("plainTextContent: ", plainTextContent);
 
   let heightClass;
   switch (height) {
@@ -29,10 +38,10 @@ export default function Hero(props) {
         className="position-absolute d-flex justify-content-center align-items-center w-100 h-100"
         style={{ background: "rgba(0,0,0,0.8)" }}
       >
-        <div
-          className="hero__body position-relative text-white"
-          dangerouslySetInnerHTML={{ __html: content.html }}
-        ></div>
+        <div className="hero__body position-relative text-white">
+          <div dangerouslySetInnerHTML={{ __html: content.html }} />
+          <div dangerouslySetInnerHTML={{ __html: plainTextContent }} />
+        </div>
       </div>
     </div>
   );
