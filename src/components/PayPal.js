@@ -82,7 +82,6 @@ export default function PayPal(props) {
   function onApprove(data, actions) {
     return actions.order.capture().then(function (details) {
       setApprovedDetails(details);
-      console.log(details);
 
       setOnApproveMessage(
         `Transaction completed by ${details.payer.name.given_name}!`
@@ -115,7 +114,7 @@ export default function PayPal(props) {
               <Button
                 key={`amount-${theAmount}`}
                 variant={activeButton === theAmount ? "dark" : "outline-dark"}
-                className="mr-2"
+                className="mr-1"
                 onClick={() => amountButtonHandler(theAmount)}
               >
                 {`$${theAmount}`}

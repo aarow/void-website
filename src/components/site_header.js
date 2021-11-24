@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import SiteNavBar from "./SiteNavBar";
 
 const AT_TOP_CLASS =
-  "site-header fixed-top py-2 py-md-5 px-md-5 transition-400";
+  "site-header fixed-top py-2 py-md-2 px-md-4 transition-400";
+// "site-header fixed-top py-2 py-md-5 px-md-5 transition-400";
+
 const NOT_TOP_CLASS =
   "site-header fixed-top bg-black-opacity-less py-2 py-md-2 px-md-4 transition-400";
 

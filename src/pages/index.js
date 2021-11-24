@@ -1,30 +1,25 @@
-import Head from "next/head";
+import BasicTemplate from "../templates/Basic";
+import BannerTemplate from "../templates/Banner";
+import { getPageDetails } from "../queries";
 
-import { getPage, getPageRoutes } from "../lib/graphcms";
-import PageSection from "../components/pageSection";
-import { SITE_NAME } from "../lib/constants";
-import Layout from "../components/layout";
+export default function Index(props) {
+  const {
+    page: { pageTemplate },
+  } = props;
 
-export async function getStaticProps() {
-  return await getPage("home");
+  let PageTemplate = BasicTemplate;
+
+  switch (pageTemplate) {
+    case "Banner":
+      PageTemplate = BannerTemplate;
+      break;
+  }
+
+  return <PageTemplate {...props} />;
 }
 
-export default function Index({ page }) {
-  return (
-    <Layout isHome={true} topPadding={false}>
-      <Head>
-        <title>{SITE_NAME}: Victims Of Illicit Drugs</title>
-        <meta
-          property="og:title"
-          content={`${SITE_NAME}: Victims Of Illicit Drugs`}
-        />
-      </Head>
-
-      {page.pageSections.map((pageSection) => (
-        <section key={pageSection.id} className="page-section">
-          <PageSection {...pageSection} />
-        </section>
-      ))}
-    </Layout>
-  );
+export async function getStaticProps() {
+  return {
+    props: await getPageDetails("void"),
+  };
 }
