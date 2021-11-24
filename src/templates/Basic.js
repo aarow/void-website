@@ -1,24 +1,13 @@
 import Head from "next/head";
-import { Container } from "react-bootstrap";
-import rehypeRaw from "rehype-raw";
-
 import ReactMarkdown from "react-markdown";
-import PageSection from "../components/pageSection";
+import rehypeRaw from "rehype-raw";
+import { Container } from "react-bootstrap";
 import Layout from "../components/layout";
-import { getPage, getPageRoutes } from "../lib/graphcms";
-import { SITE_NAME } from "../lib/constants";
-import { getPageDetails } from "../lib";
 
-export async function getStaticProps() {
-  return {
-    props: await getPageDetails("media"),
-  };
-}
-
-export default function Index(props) {
+export default function BannerTemplate(props) {
   console.log(props);
   const {
-    page: { title, content, pageSections, markdownContent, subtitle },
+    page: { title, content, sections, markdownContent, subtitle },
   } = props;
   return (
     <Layout isHome={false} topPadding={true}>
@@ -40,12 +29,13 @@ export default function Index(props) {
               {markdownContent}
             </ReactMarkdown>
           </section>
+
+          {sections.map((section) => (
+            <section key={section.id} className="page-section">
+              asdf
+            </section>
+          ))}
         </Container>
-        {pageSections.map((pageSection) => (
-          <section key={pageSection.id} className="page-section">
-            <PageSection {...pageSection} />
-          </section>
-        ))}
       </article>
     </Layout>
   );

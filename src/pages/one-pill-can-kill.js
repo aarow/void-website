@@ -11,7 +11,7 @@ import { getPageDetails } from "../lib";
 
 export async function getStaticProps() {
   return {
-    props: await getPageDetails("media"),
+    props: await getPageDetails("one-pill-can-kill"),
   };
 }
 

@@ -1,34 +1,113 @@
+html {
+  font-size: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    font-size: 18px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  text-transform: uppercase;
+  margin: 0.5em auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+.h1,
+.h2 {
+  letter-spacing: 10px;
+}
+
+h3,
+.h3 {
+  letter-spacing: 5px;
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  letter-spacing: 3px;
+}
+
 h1,
 .h1 {
-  font-size: pixToRem(24);
+  font-size: 6vw;
+
+  @include media-breakpoint-up(md) {
+    font-size: pixToRem(44);
+  }
+
+  // font-size: pixToRem(24);
+
+  // @include media-breakpoint-up(sm) {
+  //   font-size: pixToRem(36);
+  // }
+
+  // @include media-breakpoint-up(md) {
+  //   font-size: pixToRem(42);
+  // }
+
+  // @include media-breakpoint-up(lg) {
+  //   font-size: pixToRem(50);
+  // }
+}
+
+h2,
+.h2 {
+  font-size: 5vw;
 
   @include media-breakpoint-up(sm) {
     font-size: pixToRem(36);
   }
 
-  @include media-breakpoint-up(md) {
-    font-size: pixToRem(42);
-  }
+  // font-size: pixToRem(16);
 
-  @include media-breakpoint-up(lg) {
-    font-size: pixToRem(50);
-  }
+  // @include media-breakpoint-up(sm) {
+  //   font-size: pixToRem(18);
+  // }
+
+  // @include media-breakpoint-up(md) {
+  //   font-size: pixToRem(24);
+  // }
+
+  // @include media-breakpoint-up(lg) {
+  //   font-size: pixToRem(36);
+  // }
 }
 
-h2,
-.h2 {
-  font-size: pixToRem(16);
+h3,
+.h3 {
+  font-size: 3vw;
 
   @include media-breakpoint-up(sm) {
     font-size: pixToRem(18);
   }
 
-  @include media-breakpoint-up(md) {
-    font-size: pixToRem(24);
-  }
-
   @include media-breakpoint-up(lg) {
-    font-size: pixToRem(36);
+    font-size: pixToRem(24);
   }
 }
 

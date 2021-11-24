@@ -1,6 +1,5 @@
 .hero__body {
-  margin-top: -10rem;
-  padding: 2rem 2rem;
+  // margin-top: -10rem;
 
   @include media-breakpoint-up(sm) {
     margin: auto;
@@ -9,4 +8,8 @@
 
 .hero__body * {
   color: white;
+}
+
+.h-banner {
+  min-height: 44vh;
 }

@@ -115,7 +115,7 @@ export default function PayPal(props) {
               <Button
                 key={`amount-${theAmount}`}
                 variant={activeButton === theAmount ? "dark" : "outline-dark"}
-                className="mr-2"
+                className="mr-1"
                 onClick={() => amountButtonHandler(theAmount)}
               >
                 {`$${theAmount}`}

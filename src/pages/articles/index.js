@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
-import { getPage } from "../../lib/getPage";
+import { getPageDetails } from "../../lib/getPageDetails";
 import { getArticles } from "../../lib/getArticles";
 import { SITE_NAME } from "../../lib/constants";
 import Layout from "../../components/layout";
@@ -11,7 +11,7 @@ import PageSection from "../../components/pageSection";
 export async function getStaticProps() {
   return {
     props: {
-      ...(await getPage("articles")),
+      ...(await getPageDetails("articles")),
       // ...(await getArticles({ orderBy: "publishDate", orderByMethod: "DESC" })),
       ...(await getArticles()),
     },

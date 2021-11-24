@@ -1,7 +1,4 @@
-import BackgroundVideo from "react-background-video-player";
-
 export default function Hero(props) {
-  // console.log(props);
   const {
     backgroundImage,
     content,
@@ -11,39 +8,39 @@ export default function Hero(props) {
     plainTextContent,
   } = props;
 
-  console.log("plainTextContent: ", plainTextContent);
-
   let heightClass;
   switch (height) {
     case "Window":
       heightClass = "vh-100";
       break;
-    case "Content":
+    case "Container":
       heightClass = "h-100";
       break;
-    default:
+    case "Natural":
       heightClass = "h-natural";
+      break;
+    default:
+      heightClass = "h-banner";
       break;
   }
 
-  const wrapperClass = `hero__wrapper position-relative show ${heightClass} ${cssClass} `;
+  const wrapperClass = `hero__wrapper position-relative show bg-black ${heightClass} ${cssClass} `;
 
   return (
-    <div className={wrapperClass}>
-      <Background
-        backgroundImage={backgroundImage}
-        backgroundVideo={backgroundVideo}
-      />
-      <div
-        className="d-flex justify-content-center align-items-center w-100 h-100 position-absolute"
-        style={{ background: "rgba(0,0,0,0.8)" }}
-      >
-        <div className="hero__body position-relative text-white container pt-7 pb-5">
-          <div dangerouslySetInnerHTML={{ __html: content.html }} />
-          <div dangerouslySetInnerHTML={{ __html: plainTextContent }} />
+    <section>
+      <div className={wrapperClass}>
+        <Background
+          backgroundImage={backgroundImage}
+          backgroundVideo={backgroundVideo}
+        />
+        <div className="d-flex justify-content-center align-items-center h-100">
+          <div className="hero__body position-relative text-white container pt-7 pb-5">
+            <div dangerouslySetInnerHTML={{ __html: content.html }} />
+            <div dangerouslySetInnerHTML={{ __html: plainTextContent }} />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

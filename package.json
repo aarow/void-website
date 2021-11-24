@@ -31,6 +31,7 @@
   "devDependencies": {
     "browserslist": "^4.16.6",
     "glob-parent": "^5.1.2",
+    "graphql-tag": "^2.12.6",
     "react-markdown": "^6.0.2",
     "rehype-raw": "^5.1.0",
     "sass": "^1.32.12",
