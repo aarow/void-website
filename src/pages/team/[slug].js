@@ -44,8 +44,6 @@ export async function getStaticPaths() {
     }
   `);
 
-  console.log(teamMembers);
-
   return {
     paths: teamMembers.map(({ id }) => ({
       params: { slug: id },

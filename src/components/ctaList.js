@@ -1,7 +1,6 @@
 import Cta from "./cta";
 
 const CtaList = (props) => {
-  console.log(props);
   return (
     <ul>
       {/* {props.items.map((cta) => {

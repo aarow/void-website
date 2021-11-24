@@ -5,7 +5,6 @@ import { Container } from "react-bootstrap";
 import Layout from "../components/layout";
 
 export default function BannerTemplate(props) {
-  console.log(props);
   const {
     page: { title, content, sections, markdownContent, subtitle },
   } = props;
