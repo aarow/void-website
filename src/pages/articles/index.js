@@ -26,7 +26,7 @@ export default function ArticlePage(props) {
   // console.log(articles);
 
   return (
-    <Layout topPadding>
+    <Layout>
       <Head>
         <title>
           {title} | {SITE_NAME}

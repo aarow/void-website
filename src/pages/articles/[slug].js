@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { format } from "date-fns";
 import { Container, Row, Col } from "react-bootstrap";
 import { GraphQLClient } from "graphql-request";
@@ -22,6 +23,11 @@ export async function getStaticProps({ params }) {
             }
           )
         }
+        ogImage:mainImage {
+          url(transformation: {image: {resize: {width: 1200}}})
+          id
+          handle
+        }
         slug
         externalArticle
         author {
@@ -29,6 +35,7 @@ export async function getStaticProps({ params }) {
         }
         createdAt
         publishDate
+        publishTime
         body {
           html
         }
@@ -75,8 +82,7 @@ export async function getStaticPaths() {
 }
 
 export default function ArticleDetailPage(props) {
-  console.log(props);
-
+  // console.log(props);
   const {
     article: {
       id,
@@ -84,14 +90,16 @@ export default function ArticleDetailPage(props) {
       excerpt,
       body,
       mainImage,
-      publishDate,
+      publishTime,
       createdAt,
       author,
       externalArticle,
+      ogImage,
     },
   } = props;
+
   const publishedTime = format(
-    new Date(publishDate ? publishDate : createdAt),
+    new Date(publishTime ? publishTime : createdAt),
     "d MMM yyyy"
   );
 
@@ -101,6 +109,11 @@ export default function ArticleDetailPage(props) {
         <title>
           {title} | {SITE_NAME}
         </title>
+        <meta property="og:title" content={`${title} | {SITE_NAME}`} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:image" content={ogImage.url} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
       </Head>
 
       <section>
