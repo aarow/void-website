@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 
 export default function BannerTemplate(props) {
   const {
-    page: { title, content, sections, markdownContent, subtitle },
+    page: { title, content, markdownContent },
   } = props;
   return (
     <Layout isHome={false} topPadding={true}>
@@ -15,11 +15,6 @@ export default function BannerTemplate(props) {
       </Head>
       <article>
         <Container>
-          <section className="text-center">
-            <h1>{title}</h1>
-            <p>{subtitle}</p>
-          </section>
-
           <section
             dangerouslySetInnerHTML={{ __html: content ? content.html : "" }}
           />
@@ -28,12 +23,6 @@ export default function BannerTemplate(props) {
               {markdownContent}
             </ReactMarkdown>
           </section>
-
-          {sections.map((section) => (
-            <section key={section.id} className="page-section">
-              asdf
-            </section>
-          ))}
         </Container>
       </article>
     </Layout>

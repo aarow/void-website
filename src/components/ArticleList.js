@@ -10,7 +10,7 @@ export default function ArticleList({ articles = [] }) {
         {articles.map((article) => (
           <li
             key={article.id}
-            className="article-item--wrapper col-12 col-lg-6 mb-5"
+            className="article-item--wrapper col-md-9 mx-auto mb-5"
           >
             <ArticleItem {...article} />
           </li>

@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 
 export default function BannerTemplate(props) {
   const {
-    page: { title, sections, markdownContent },
+    page: { title, sections, markdownContent, content },
   } = props;
   return (
     <Layout isHome={true} topPadding={false}>

@@ -128,7 +128,9 @@ export default function ArticleDetailPage(props) {
                   <p className="text-muted text-center m-0">
                     {publishedTime} | {author.name}
                   </p>
-                  <h1 className=" text-center mt-3">{title}</h1>
+                  <h1 className=" text-center mt-3 letter-spacing-2">
+                    {title}
+                  </h1>
 
                   <p className="text-muted">
                     <em>Summary: {excerpt}</em>

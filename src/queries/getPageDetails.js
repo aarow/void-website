@@ -68,6 +68,10 @@ const pageDetailsQuery = gql`
         }
         ... on PageSection {
           id
+          richContent {
+            html
+          }
+          markdownContent
           textColor {
             hex
           }

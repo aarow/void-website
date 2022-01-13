@@ -9,7 +9,6 @@ import BannerTemplate from "../templates/Banner";
 import { getPageDetails } from "../queries";
 
 export default function Index(props) {
-  console.log("[slug] page");
   const {
     page: { pageTemplate },
   } = props;
@@ -49,6 +48,5 @@ export async function getStaticPaths() {
         },
       }))
   );
-  console.log("paths: ", paths);
   return { paths, fallback: false };
 }

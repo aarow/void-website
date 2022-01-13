@@ -25,13 +25,13 @@ export default function ArticleItem(props) {
   const Anchor = ({ children }) => (
     <>
       {externalArticle && (
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" className="text-decoration-none">
           {children}
         </a>
       )}
       {!externalArticle && (
         <Link href={url}>
-          <a>{children}</a>
+          <a className="text-decoration-none">{children}</a>
         </Link>
       )}
     </>
@@ -50,11 +50,13 @@ export default function ArticleItem(props) {
       </div>
       <div>
         <Anchor>
-          <h3 className="m-0 ">{title}</h3>
+          <h3 className="m-0 letter-spacing-2">{title}</h3>
         </Anchor>
 
         <p className="small text-muted m-0">{byline}</p>
-        <p className="text-muted m-0 mt-2 line-height-1-6">{excerpt}</p>
+        <p className="text-muted m-0 mt-2 line-height-1-6 small font-italic">
+          {excerpt}
+        </p>
       </div>
     </article>
   );

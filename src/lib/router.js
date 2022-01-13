@@ -1,8 +1,20 @@
-export const routes = [
+export const siteRoutes = [
   {
-    path: "/media",
+    path: "/media-links",
     label: "Media",
-    slug: "media",
+    slug: "media-links",
+    routes: [
+      {
+        path: "/media-links",
+        label: "Media Links",
+        slug: "media-links",
+      },
+      {
+        path: "/in-the-shadow-of-a-pandemic",
+        label: "In the Shadow of a Pandemic",
+        slug: "in-the-shadow-of-a-pandemic",
+      },
+    ],
   },
   {
     path: "/articles",
