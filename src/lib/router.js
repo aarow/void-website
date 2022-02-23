@@ -14,6 +14,11 @@ export const siteRoutes = [
         label: "In the Shadow of a Pandemic",
         slug: "in-the-shadow-of-a-pandemic",
       },
+      {
+        path: "/dead-on-arrival-espanol",
+        label: "dead on arrival (en español",
+        slug: "dead-on-arrival-espanol",
+      },
     ],
   },
   {
