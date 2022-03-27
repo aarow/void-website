@@ -52,6 +52,7 @@ const pageDetailsQuery = gql`
         }
         ... on Hero {
           id
+          countdownTimer
           content {
             html
           }
