@@ -19,6 +19,11 @@ export const siteRoutes = [
         label: "dead on arrival (en español",
         slug: "dead-on-arrival-espanol",
       },
+      {
+        path: "/oc-sheriff-fentanyl-psa",
+        label: "Fentanyl PSA - OC Sheriff",
+        slug: "oc-sheriff-fentanyl-psa",
+      },
     ],
   },
   {

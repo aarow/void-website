@@ -7,12 +7,14 @@ export default function Index(props) {
     page: { pageTemplate },
   } = props;
 
-  let PageTemplate = BasicTemplate;
+  let PageTemplate;
 
   switch (pageTemplate) {
     case "Banner":
       PageTemplate = BannerTemplate;
       break;
+    default:
+      PageTemplate = BasicTemplate;
   }
 
   return <PageTemplate {...props} />;
