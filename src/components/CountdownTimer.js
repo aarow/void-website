@@ -9,7 +9,7 @@ export default function CountdownTimer({ countdownDate }) {
   };
   const [timeLeft, setTimeLeft] = useState(initialTimeState);
 
-  if (countdownDate.trim() === "") return null;
+  if (!countdownDate || countdownDate.trim() === "") return null;
 
   const futureDate = new Date(countdownDate);
 
@@ -26,7 +26,10 @@ export default function CountdownTimer({ countdownDate }) {
       setTimeLeft({ days, hours, minutes, seconds });
     }
     countDown();
-    setInterval(countDown, 1000);
+
+    const timer = setInterval(countDown, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
