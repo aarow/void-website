@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import CountdownTimer from "../CountdownTimer";
+
 export default function Hero(props) {
   const {
     backgroundImage,
@@ -6,6 +9,7 @@ export default function Hero(props) {
     cssClass,
     backgroundVideo,
     plainTextContent,
+    countdownTimer,
   } = props;
 
   let heightClass;
@@ -35,6 +39,7 @@ export default function Hero(props) {
         />
         <div className="d-flex justify-content-center align-items-center h-100">
           <div className="hero__body position-relative text-white container pt-7 pb-5">
+            <CountdownTimer countdownDate={countdownTimer} />
             <div dangerouslySetInnerHTML={{ __html: content.html }} />
             <div dangerouslySetInnerHTML={{ __html: plainTextContent }} />
           </div>
