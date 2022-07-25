@@ -1,5 +1,10 @@
 export const siteRoutes = [
   {
+    path: "/resources",
+    label: "Resources",
+    slug: "resources",
+  },
+  {
     path: "/media-links",
     label: "Media",
     slug: "media-links",
