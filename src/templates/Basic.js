@@ -3,10 +3,11 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Container } from "react-bootstrap";
 import Layout from "../components/layout";
+import Section from "../components/sections/Section";
 
-export default function BannerTemplate(props) {
+export default function BasicTemplate(props) {
   const {
-    page: { title, content, markdownContent },
+    page: { title, content, markdownContent, sections },
   } = props;
   return (
     <Layout isHome={false} topPadding={true}>
@@ -23,6 +24,9 @@ export default function BannerTemplate(props) {
               {markdownContent}
             </ReactMarkdown>
           </section>
+          {sections.map((section) => (
+            <Section key={section.id} {...section} />
+          ))}
         </Container>
       </article>
     </Layout>

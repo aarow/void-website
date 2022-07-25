@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CtaBottom from "./CtaBottom";
 import ContactButton from "./ContactButton";
@@ -20,7 +21,6 @@ const Cta = (props) => {
     icon = null,
     whiteText,
   } = props;
-
   const wrapperId = `cta-${id}`;
   const wrapperClass = `cta--wrapper py-10 ${cssClasses}`;
   const rowClass = centered
@@ -33,7 +33,11 @@ const Cta = (props) => {
     backgroundColor: backgroundColor ? backgroundColor.hex : "inherit",
   };
   const textColorStyle = { color: whiteText ? "#fff" : "inherit" };
-  const linkClass = whiteText ? "btn-outline-light" : "btn-outline-dark";
+  const linkClass = useMemo(
+    () => (whiteText ? "btn-outline-light" : "btn-outline-dark"),
+    [whiteText]
+  );
+  console.log(linkClass);
 
   return (
     <>
@@ -51,7 +55,9 @@ const Cta = (props) => {
               </h2>
               <p style={textColorStyle}>{content}</p>
             </Col>
-            {ctaType === "Contact" && <ContactButton size="lg" />}
+            {ctaType === "Contact" && (
+              <ContactButton size="lg" hasWhiteText={whiteText} />
+            )}
             {ctaType !== "Contact" && linkUrl && linkTitle && (
               <Col xs={12} md="auto" className="my-4">
                 <a href={linkUrl} className={`btn btn-lg ${linkClass}`}>

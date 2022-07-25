@@ -3,7 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import ContactForm from "./ContactForm";
 
 export default function ContactButton(props) {
-  const { size = "md", className } = props;
+  const { size = "md", className, hasWhiteText } = props;
   const [showForm, setShowForm] = useState(false);
   const handleClose = () => setShowForm(false);
   const handleShow = () => setShowForm(true);
@@ -11,7 +11,7 @@ export default function ContactButton(props) {
   return (
     <>
       <Button
-        variant="outline-light"
+        variant={hasWhiteText ? "outline-light" : "outline-dark"}
         size={size}
         onClick={handleShow}
         className={className}
